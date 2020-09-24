@@ -13,7 +13,7 @@ import Header from "./Header";
 
 export default () => (
   <Router>
-    <>
+    <div>
       <Header />
       <Switch>
         <Route path="/" exact component={Home} />
@@ -22,6 +22,6 @@ export default () => (
         <Route path="/search" component={Search} />
         <Redirect from="*" to="/" />
       </Switch>
-    </>
+    </div>
   </Router>
 );
