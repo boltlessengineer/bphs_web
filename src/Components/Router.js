@@ -10,11 +10,13 @@ import About from "Routes/About";
 import Club from "Routes/Club";
 import Search from "Routes/Search";
 import Header from "./Header";
+import SubHeader from "./SubHeader";
 
 export default () => (
   <Router>
     <div>
       <Header />
+      <SubHeader />
       <Switch>
         <Route path="/" exact component={Home} />
         <Route path="/about" component={About} />

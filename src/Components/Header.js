@@ -1,23 +1,52 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import styled from "styled-components";
+
+const Header = styled.header`
+  height: 60px;
+  padding: 0 7vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #669beb;
+`;
+
+const List = styled.ul`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+`;
+
+const Nav = styled.nav`
+  display: flex;
+  gap: 2vw;
+`;
+
+const Item = styled.li`
+  font-size: 20px;
+  font-weight: 400;
+  color: white;
+`;
+
+const SLink = styled(Link)``;
 
 export default () => (
-  <header>
-    <nav>
-      <ul>
-        <li>
-          <Link to="/">BopyungHS</Link>
-        </li>
-        <li>
-          <Link to="/about">About</Link>
-        </li>
-        <li>
-          <Link to="/club">Clubs</Link>
-        </li>
-        <li>
-          <Link to="/search">Search</Link>
-        </li>
-      </ul>
-    </nav>
-  </header>
+  <Header>
+    <List>
+      <Item>
+        <SLink to="/">BopyungHS</SLink>
+      </Item>
+      <Nav>
+        <Item>
+          <SLink to="/about">About</SLink>
+        </Item>
+        <Item>
+          <SLink to="/club">Clubs</SLink>
+        </Item>
+        <Item>
+          <SLink to="/search">Search</SLink>
+        </Item>
+      </Nav>
+    </List>
+  </Header>
 );
