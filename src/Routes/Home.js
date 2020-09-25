@@ -4,50 +4,96 @@ import styled from "styled-components";
 const BgImg = styled.div`
   position: absolute;
   background-image: url("");
-  background-color: #d0d0d0;
+  background-color: #666666;
   width: 100vw;
-  height: 25vh;
+  height: 30vh;
   z-index: -2;
 `;
 
 const Greeting = styled.div`
   position: absolute;
-  padding: 0 7vw;
-  height: 20vh;
+  padding: 0 10vw;
+  height: 25vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: -1;
+  color: white;
 `;
 
 const Main = styled.main`
-  padding: 20vh 7vw 0 7vw;
+  position: relative;
+  top: 25vh;
+  padding: 0 10vw;
+  display: flex;
+  gap: 20px;
+  grid-template-columns: 1fr 1fr;
+`;
+
+const List = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 `;
 
 const Section = styled.section`
   display: block;
   background-color: #ffffff;
   border-radius: 30px;
-  min-height: 80px;
   padding: 12px 24px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(0, 0, 0, 0.04),
+    0px 0px 1px rgba(0, 0, 0, 0.04);
+`;
+
+const CalendarSection = styled(Section)`
+  flex: 1;
+`;
+
+const MealSection = styled(Section)`
+  flex: 1;
+`;
+
+const PostSection = styled(Section)`
+  flex: 2;
+`;
+
+const H1 = styled.h1`
+  font-weight: bold;
+  font-size: 48px;
+`;
+
+const H2 = styled.h2`
+  font-size: 36px;
 `;
 
 export default () => (
   <div>
     <BgImg />
     <Greeting>
-      <h1>보평고등학교 메인에 오신 것을 환영합니다.</h1>
+      <H1>보평고등학교 메인에 오신 것을 환영합니다.</H1>
     </Greeting>
     <Main>
-      <Section>
-        <h1>오늘은</h1>
-      </Section>
-      <Section>
-        <h1>오늘의 급식</h1>
-      </Section>
-      <Section>
-        <h1>공지사항</h1>
-      </Section>
+      <List>
+        <CalendarSection>
+          <H2>오늘은</H2>
+          <p>9월 25일 금요일</p>
+          <p>특별한 일정이 없습니다.</p>
+        </CalendarSection>
+        <MealSection>
+          <H2>오늘의 급식</H2>
+          <ul>
+            <li>압맥밥</li>
+            <li>통마늘돈육오븐구이</li>
+            <li>배추김치</li>
+            <li>김치콩나물국</li>
+            <li>해물파전</li>
+            <li>쌈채</li>
+          </ul>
+        </MealSection>
+      </List>
+      <PostSection>
+        <H2>공지사항</H2>
+      </PostSection>
     </Main>
   </div>
 );
