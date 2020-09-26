@@ -26,7 +26,10 @@ const Main = styled.main`
   padding: 0 10vw;
   display: flex;
   gap: 20px;
-  grid-template-columns: 1fr 1fr;
+
+  @media only screen and (max-width: 800px) {
+    flex-direction: column;
+  }
 `;
 
 const List = styled.div`
@@ -47,14 +50,29 @@ const Section = styled.section`
 
 const CalendarSection = styled(Section)`
   flex: 1;
+  min-height: 180px;
 `;
 
 const MealSection = styled(Section)`
   flex: 1;
+  min-height: 280px;
 `;
 
 const PostSection = styled(Section)`
   flex: 2;
+`;
+
+const CalSecContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
+const Today = styled.p`
+  margin-top: 8px;
+`;
+
+const ScheduleList = styled.p`
+  margin-top: 14px;
 `;
 
 const H1 = styled.h1`
@@ -70,17 +88,25 @@ export default () => (
   <div>
     <BgImg />
     <Greeting>
-      <H1>보평고등학교 메인에 오신 것을 환영합니다.</H1>
+      <H1>보평고등학교&nbsp;메인에 오신&nbsp;것을 환영합니다.</H1>
     </Greeting>
     <Main>
       <List>
         <CalendarSection>
-          <H2>오늘은</H2>
-          <p>9월 25일 금요일</p>
-          <p>특별한 일정이 없습니다.</p>
+          <CalSecContainer>
+            <H2>오늘은</H2>
+            <H2>
+              <span role="img" aria-label="calendar">
+                📅
+              </span>
+            </H2>
+          </CalSecContainer>
+          <Today>9월 25일 금요일</Today>
+          <ScheduleList>특별한 일정이 없습니다.</ScheduleList>
         </CalendarSection>
         <MealSection>
           <H2>오늘의 급식</H2>
+          <span>중식</span> | <span>석식</span>
           <ul>
             <li>압맥밥</li>
             <li>통마늘돈육오븐구이</li>
@@ -92,7 +118,7 @@ export default () => (
         </MealSection>
       </List>
       <PostSection>
-        <H2>공지사항</H2>
+        <h3>공지사항</h3>
       </PostSection>
     </Main>
   </div>

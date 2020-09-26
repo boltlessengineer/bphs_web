@@ -15,6 +15,8 @@ const globalStyles = createGlobalStyle`
         font-family: NotoSansKR, sans-serif;
         font-size: 18px;
         background-color: #F6F6F6;
+        word-break: keep-all;
+        line-height: normal;
     }
 `;
 
