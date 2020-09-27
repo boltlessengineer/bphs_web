@@ -11,7 +11,7 @@ const BgImg = styled.div`
 `;
 
 const Greeting = styled.div`
-  position: absolute;
+  position: relative;
   padding: 0 10vw;
   height: 25vh;
   display: flex;
@@ -21,8 +21,8 @@ const Greeting = styled.div`
 `;
 
 const Main = styled.main`
-  position: relative;
-  top: 25vh;
+  /* position: relative;
+  top: 25vh; */
   padding: 0 10vw;
   display: flex;
   gap: 20px;
@@ -85,7 +85,7 @@ const H2 = styled.h2`
 `;
 
 export default () => (
-  <div>
+  <>
     <BgImg />
     <Greeting>
       <H1>보평고등학교&nbsp;메인에 오신&nbsp;것을 환영합니다.</H1>
@@ -121,5 +121,5 @@ export default () => (
         <h3>공지사항</h3>
       </PostSection>
     </Main>
-  </div>
+  </>
 );

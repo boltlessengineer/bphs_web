@@ -18,6 +18,20 @@ const globalStyles = createGlobalStyle`
         background-color: #F6F6F6;
         word-break: keep-all;
         line-height: normal;
+        height: 100vh;
+        overflow: hidden;
+    }
+    body::-webkit-scrollbar {
+        display: none;
+    }
+    #wrapper {
+        height: calc(100vh - 110px);
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+    #wrapper>* {
+        width: 100vw;
+        height: auto;
     }
 `;
 

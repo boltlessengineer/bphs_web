@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import styled from "styled-components";
 
 const Header = styled.header`
@@ -30,8 +30,8 @@ const Item = styled.li`
 
 const SLink = styled(Link)``;
 
-export default () => (
-  <Header>
+const HeaderComponent = ({ location: { pathname } }) => (
+  <Header lock={pathname !== "/about"}>
     <List>
       <Item>
         <SLink to="/">BopyungHS</SLink>
@@ -50,3 +50,5 @@ export default () => (
     </List>
   </Header>
 );
+
+export default withRouter(HeaderComponent);

@@ -14,16 +14,20 @@ import SubHeader from "./SubHeader";
 
 export default () => (
   <Router>
-    <div>
+    <>
       <Header />
       <SubHeader />
-      <Switch>
-        <Route path="/" exact component={Home} />
-        <Route path="/about" component={About} />
-        <Route path="/club" component={Club} />
-        <Route path="/search" component={Search} />
-        <Redirect from="*" to="/" />
-      </Switch>
-    </div>
+      <div id="wrapper">
+        <div>
+          <Switch>
+            <Route path="/" exact component={Home} />
+            <Route path="/about" component={About} />
+            <Route path="/club" component={Club} />
+            <Route path="/search" component={Search} />
+            <Redirect from="*" to="/" />
+          </Switch>
+        </div>
+      </div>
+    </>
   </Router>
 );
