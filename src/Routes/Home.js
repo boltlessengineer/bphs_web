@@ -16,7 +16,7 @@ const Greeting = styled.div`
   height: 25vh;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: left;
   color: white;
 `;
 
