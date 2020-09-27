@@ -7,6 +7,7 @@ const BgImg = styled.div`
   background-color: #666666;
   width: 100vw;
   height: 30vh;
+  min-height: 240px;
   z-index: -2;
 `;
 
@@ -14,6 +15,7 @@ const Greeting = styled.div`
   position: relative;
   padding: 0 10vw;
   height: 25vh;
+  min-height: 200px;
   display: flex;
   align-items: center;
   justify-content: left;
@@ -21,11 +23,10 @@ const Greeting = styled.div`
 `;
 
 const Main = styled.main`
-  /* position: relative;
-  top: 25vh; */
   padding: 0 10vw;
   display: flex;
   gap: 20px;
+  color: #202020;
 
   @media only screen and (max-width: 800px) {
     flex-direction: column;
