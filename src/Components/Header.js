@@ -17,7 +17,7 @@ const List = styled.ul`
   justify-content: space-between;
 `;
 
-const Nav = styled.nav`
+const MainNav = styled.div`
   display: flex;
   gap: 2vw;
 `;
@@ -36,7 +36,7 @@ const HeaderComponent = ({ location: { pathname } }) => (
       <Item>
         <SLink to="/">BopyungHS</SLink>
       </Item>
-      <Nav>
+      <MainNav>
         <Item>
           <SLink to="/about">About</SLink>
         </Item>
@@ -46,8 +46,10 @@ const HeaderComponent = ({ location: { pathname } }) => (
         <Item>
           <SLink to="/search">Search</SLink>
         </Item>
-      </Nav>
+      </MainNav>
     </List>
+    {/* 여기에 위치 확인하고 subNav 만드는 switch문 추가
+    (아니면 SubHeader에서 그 작업을..?) */}
   </Header>
 );
 
