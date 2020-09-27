@@ -19,16 +19,13 @@ const globalStyles = createGlobalStyle`
         word-break: keep-all;
         line-height: normal;
         width: 100vw;
-        /* height: 100vh; */
         overflow-x: hidden;
     }
-    body>*{
+    /* body>*{
         width: 100vw;
     }
     body::-webkit-scrollbar {
         width: 5px;
-        /* border: none;
-        box-shadow: none; */
     }
     body::-webkit-scrollbar-track {
         display: none;
@@ -36,17 +33,6 @@ const globalStyles = createGlobalStyle`
     }
     body::-webkit-scrollbar-thumb {
         background-color: #84bfe6;
-        /* border: none;
-        box-shadow: none; */
-    }
-    /* #wrapper {
-        height: calc(100vh - 110px);
-        overflow-x: hidden;
-        overflow-y: auto;
-    }
-    #wrapper>* {
-        width: 100vw;
-        height: auto;
     } */
 `;
 
