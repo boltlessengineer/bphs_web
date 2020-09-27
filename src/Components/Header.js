@@ -31,7 +31,7 @@ const Item = styled.li`
 const SLink = styled(Link)``;
 
 const HeaderComponent = ({ location: { pathname } }) => (
-  <Header lock={pathname !== "/about"}>
+  <Header>
     <List>
       <Item>
         <SLink to="/">BopyungHS</SLink>

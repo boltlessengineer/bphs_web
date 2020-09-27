@@ -17,17 +17,13 @@ export default () => (
     <>
       <Header />
       <SubHeader />
-      <div id="wrapper">
-        <div>
-          <Switch>
-            <Route path="/" exact component={Home} />
-            <Route path="/about" component={About} />
-            <Route path="/club" component={Club} />
-            <Route path="/search" component={Search} />
-            <Redirect from="*" to="/" />
-          </Switch>
-        </div>
-      </div>
+      <Switch>
+        <Route path="/" exact component={Home} />
+        <Route path="/about" component={About} />
+        <Route path="/club" component={Club} />
+        <Route path="/search" component={Search} />
+        <Redirect from="*" to="/" />
+      </Switch>
     </>
   </Router>
 );

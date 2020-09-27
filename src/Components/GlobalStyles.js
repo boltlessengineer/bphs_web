@@ -18,13 +18,28 @@ const globalStyles = createGlobalStyle`
         background-color: #F6F6F6;
         word-break: keep-all;
         line-height: normal;
-        height: 100vh;
-        overflow: hidden;
+        width: 100vw;
+        /* height: 100vh; */
+        overflow-x: hidden;
+    }
+    body>*{
+        width: 100vw;
     }
     body::-webkit-scrollbar {
-        display: none;
+        width: 5px;
+        /* border: none;
+        box-shadow: none; */
     }
-    #wrapper {
+    body::-webkit-scrollbar-track {
+        display: none;
+        background-color: #cfcfcf;
+    }
+    body::-webkit-scrollbar-thumb {
+        background-color: #84bfe6;
+        /* border: none;
+        box-shadow: none; */
+    }
+    /* #wrapper {
         height: calc(100vh - 110px);
         overflow-x: hidden;
         overflow-y: auto;
@@ -32,7 +47,7 @@ const globalStyles = createGlobalStyle`
     #wrapper>* {
         width: 100vw;
         height: auto;
-    }
+    } */
 `;
 
 export default globalStyles;
