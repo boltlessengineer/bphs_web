@@ -11,17 +11,18 @@ const headerDic = {
     { name: "더보기", path: "" },
   ],
   club: [
-    { name: "창체동아리", path: "creative" },
-    { name: "자율동아리", path: "freestanding" },
-    { name: "동아리 가입하기", path: "join" },
+    { name: "창체동아리", path: "/club/creative" },
+    { name: "자율동아리", path: "/club/freestanding" },
+    { name: "동아리 가입하기", path: "/club/join" },
   ],
 };
 
-const Header = styled.ul`
+const Header = styled.header`
   position: sticky;
   position: --webkit-sticky;
   top: 0;
-  padding: 0 10vw;
+  padding-left: 10vw;
+  padding-right: 10vw;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -29,10 +30,11 @@ const Header = styled.ul`
   background-color: #ffffff;
   ${(props) => (props.children ? `height: auto;` : `height: 0;`)}
   transition: max-height 0.15s ease-out;
-  overflow: hidden;
+  z-index: 9999;
+  /* overflow: hidden; */
 `;
 
-const Item = styled.li`
+const Item = styled.div`
   height: 50px;
   font-size: 16px;
   font-weight: 400;
@@ -49,15 +51,6 @@ const More = styled.a`
 
 const SubHeader = ({ location: { pathname } }) => (
   <Header>
-    <div
-      style={{
-        position: "sticky",
-        width: "10px",
-        height: "5px",
-        background: "red",
-        top: 0,
-      }}
-    />
     {headerDic[pathname.split("/")[1] || "main"] &&
       headerDic[pathname.split("/")[1] || "main"].map((item) => (
         <Item>

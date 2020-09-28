@@ -3,7 +3,7 @@ import { Link, withRouter } from "react-router-dom";
 import styled from "styled-components";
 import SubHeader from "Components/SubHeader";
 
-const MainHeader = styled.ul`
+const MainHeader = styled.header`
   height: 60px;
   padding: 0 10vw;
   width: 100%;
@@ -18,7 +18,7 @@ const MainNav = styled.div`
   gap: 2vw;
 `;
 
-const Item = styled.li`
+const Item = styled.div`
   font-size: 20px;
   font-weight: 400;
   color: white;
@@ -27,7 +27,7 @@ const Item = styled.li`
 const SLink = styled(Link)``;
 
 const Header = ({ location: { pathname } }) => (
-  <header>
+  <>
     <MainHeader>
       <Item>
         <SLink to="/">BopyungHS</SLink>
@@ -45,7 +45,7 @@ const Header = ({ location: { pathname } }) => (
       </MainNav>
     </MainHeader>
     <SubHeader />
-  </header>
+  </>
 );
 
 export default withRouter(Header);
