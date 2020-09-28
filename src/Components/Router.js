@@ -5,14 +5,12 @@ import Home from "Routes/Home";
 import Club from "Routes/Club";
 // import Search from "Routes/Search";
 import Header from "Components/Header";
-import SubHeader from "Components/SubHeader";
 import NotFound from "Routes/NotFound";
 
 export default () => (
   <Router>
     <>
       <Header />
-      <SubHeader />
       <Switch>
         <Route path="/" exact component={Home} />
         {/* <Route path="/about" component={About} /> */}

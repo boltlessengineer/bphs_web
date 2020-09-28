@@ -60,7 +60,7 @@ const VerticalList = styled.div`
   grid-auto-columns: 430px;
   overflow-x: scroll;
   scroll-snap-type: x proximity;
-  padding-bottom: 15px;
+  padding-bottom: 20px;
   &::before,
   &::after {
     content: "";
@@ -79,11 +79,6 @@ const VerticalList = styled.div`
     border-right: none;
     border-left: none;
     border-radius: 5px;
-  }
-
-  &::-webkit-scrollbar-track-piece:end {
-    background: transparent;
-    margin-bottom: 10px;
   }
   &::-webkit-scrollbar-track-piece:end {
     background: transparent;

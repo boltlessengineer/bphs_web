@@ -1,19 +1,15 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
 import styled from "styled-components";
+import SubHeader from "Components/SubHeader";
 
-const Header = styled.header`
+const MainHeader = styled.ul`
   height: 60px;
   padding: 0 10vw;
+  width: 100%;
+  background-color: #669beb;
   display: flex;
   align-items: center;
-  justify-content: center;
-  background-color: #669beb;
-`;
-
-const List = styled.ul`
-  width: 100%;
-  display: flex;
   justify-content: space-between;
 `;
 
@@ -30,9 +26,9 @@ const Item = styled.li`
 
 const SLink = styled(Link)``;
 
-const HeaderComponent = ({ location: { pathname } }) => (
-  <Header>
-    <List>
+const Header = ({ location: { pathname } }) => (
+  <header>
+    <MainHeader>
       <Item>
         <SLink to="/">BopyungHS</SLink>
       </Item>
@@ -47,10 +43,9 @@ const HeaderComponent = ({ location: { pathname } }) => (
           <SLink to="/search">Search</SLink>
         </Item>
       </MainNav>
-    </List>
-    {/* 여기에 위치 확인하고 subNav 만드는 switch문 추가
-    (아니면 SubHeader에서 그 작업을..?) */}
-  </Header>
+    </MainHeader>
+    <SubHeader />
+  </header>
 );
 
-export default withRouter(HeaderComponent);
+export default withRouter(Header);
