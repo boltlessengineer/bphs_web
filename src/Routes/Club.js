@@ -68,21 +68,23 @@ const VerticalList = styled.div`
   }
   &::-webkit-scrollbar {
     display: block;
-    width: 5px;
+    height: 8px;
   }
   &::-webkit-scrollbar-track {
     background: transparent;
+    height: 8px;
   }
 
   &::-webkit-scrollbar-thumb {
     background-color: lightgray;
     border-right: none;
     border-left: none;
-    border-radius: 5px;
+    border-radius: 8px;
   }
   &::-webkit-scrollbar-track-piece:end {
     background: transparent;
     margin-right: 10vw;
+    height: 8px;
   }
   &::-webkit-scrollbar-track-piece:start {
     background: transparent;
