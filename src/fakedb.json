@@ -9,7 +9,7 @@
             "clublist": [
               {
                 "name": "MAKER",
-                "tag": ["아두이노", "코딩", "3D 프린팅", "로봇", "웹 개발"],
+                "tags": ["아두이노", "코딩", "3D 프린팅", "로봇", "웹 개발"],
                 "description": "코딩, 모델링, 3D 프린팅을 포함한\n복합적인 메이커 활동을 하는 동아리입니다.",
                 "students": {
                   "head": {
@@ -24,7 +24,7 @@
               },
               {
                 "name": "BLINK - Y",
-                "tag": [],
+                "tags": [],
                 "description": "",
                 "students": {
                   "head": {
@@ -39,7 +39,7 @@
               },
               {
                 "name": "BLINK - U",
-                "tag": [],
+                "tags": [],
                 "description": "",
                 "students": {
                   "head": {
@@ -59,7 +59,7 @@
             "clublist": [
               {
                 "name": "인문입문",
-                "tag": [],
+                "tags": [],
                 "description": "",
                 "students": {
                   "head": {
@@ -86,7 +86,7 @@
             "clublist": [
               {
                 "name": "웹테이커",
-                "tag": [],
+                "tags": [],
                 "description": "",
                 "students": {
                   "head": {
@@ -101,7 +101,7 @@
               },
               {
                 "name": "화하학~",
-                "tag": [],
+                "tags": [],
                 "description": "",
                 "students": {
                   "head": {
@@ -116,7 +116,7 @@
               },
               {
                 "name": "기하학!",
-                "tag": [],
+                "tags": [],
                 "description": "",
                 "students": {
                   "head": {
@@ -136,7 +136,7 @@
             "clublist": [
               {
                 "name": "저자를 매우 철학",
-                "tag": [],
+                "tags": [],
                 "description": "",
                 "students": {
                   "head": {

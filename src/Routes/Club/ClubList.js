@@ -99,6 +99,31 @@ const ClubList = ({ children }) => (
   <VerticalList className="fullWidth">{children}</VerticalList>
 );
 
+const TagList = styled.div`
+  display: flex;
+  gap: 6px;
+`;
+
+const Tag = styled.span`
+  display: flex;
+  height: 18px;
+  font-size: 12px;
+  font-weight: bold;
+  background-color: gray;
+  padding: 0 6px;
+  border-radius: 16px;
+  margin: 14px 0;
+`;
+
+const Description = styled.p``;
+
+const Students = styled.div`
+  position: absolute;
+  bottom: 18px;
+`;
+
+const Student = styled.p``;
+
 const H0 = styled.h1`
   font-weight: bold;
   font-size: 64px;
@@ -128,9 +153,23 @@ export default ({ title, data }) => (
             <>
               <H3>{subtitle}</H3>
               <ClubList>
-                {clublist.map(({ name }) => (
+                {clublist.map(({ name, tags, description, students }) => (
                   <ClubCard>
                     <H3>{name}</H3>
+                    <TagList>
+                      {tags.map((tag) => (
+                        <Tag>{tag}</Tag>
+                      ))}
+                    </TagList>
+                    <Description>{description}</Description>
+                    <Students>
+                      <Student>
+                        부장 : {students.head.std_id} {students.head.name}
+                      </Student>
+                      <Student>
+                        차장 : {students.second.std_id} {students.second.name}
+                      </Student>
+                    </Students>
                   </ClubCard>
                 ))}
               </ClubList>

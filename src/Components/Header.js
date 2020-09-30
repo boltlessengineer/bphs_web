@@ -1,7 +1,6 @@
 import React from "react";
 import { Link, NavLink, withRouter } from "react-router-dom";
 import styled from "styled-components";
-import SubHeader from "Components/SubHeader";
 
 const MainHeader = styled.header`
   height: 60px;
