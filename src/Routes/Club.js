@@ -114,8 +114,9 @@ const H3 = styled.h3`
   font-size: 36px;
 `;
 
-export default () => (
+export default (props) => (
   <>
+    {/* {console.log(props)} */}
     <BgImg />
     <Greeting>
       <H0>창체동아리</H0>

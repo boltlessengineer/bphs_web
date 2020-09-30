@@ -21,9 +21,10 @@ const globalStyles = createGlobalStyle`
         width: 100vw;
         overflow-x: hidden;
     }
-    /* body>*{
+    body>*{
         width: 100vw;
     }
+    /* 
     body::-webkit-scrollbar {
         width: 5px;
     }
