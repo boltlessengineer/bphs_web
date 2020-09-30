@@ -59,10 +59,9 @@ const MainNav = styled.div`
   height: 100%;
 `;
 
-const Header = (props) => {
+const Header = () => {
   return (
     <>
-      {console.log(props)}
       <MainHeader>
         <Item>
           <Link to="/">BopyungHS</Link>

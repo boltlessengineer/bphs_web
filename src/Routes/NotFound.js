@@ -9,6 +9,20 @@ const BgImg = styled.div`
   width: 100vw;
   height: 30vh;
   z-index: -2;
+
+  /*그냥 우스게 스타일 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  & span {
+    font-size: 8em;
+    font-weight: 900;
+    opacity: 20%;
+    display: inline-block;
+    transform: rotate(5deg);
+  }
+  /*그냥 우스게 스타일 */
 `;
 
 const Greeting = styled.div`
@@ -86,12 +100,14 @@ const GoHome = ({ children }) => (
 
 export default () => (
   <>
-    <BgImg />
+    <BgImg id="particleBg">
+      <span>뭔가 엄청 멋진 배경</span>
+    </BgImg>
     <Greeting>
       <H0>404 - Not Found</H0>
     </Greeting>
     <Main>
-      <H2>{/*style={{ color: "#e74c3c" }}*/}페이지를 찾을 수 없습니다!</H2>
+      <H2>페이지를 찾을 수 없습니다!</H2>
       <p>페이지가 존재하지 않거나 아직 만들어지지 않았습니다.</p>
       <GoHome>메인으로 돌아가기</GoHome>
     </Main>
