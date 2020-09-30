@@ -1,8 +1,14 @@
 import React from "react";
-import { HashRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  HashRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 import Home from "Routes/Home";
 // import About from "Routes/About";
-import Club from "Routes/Club";
+import CreativeClub from "Routes/Club/Creative";
+import FSClub from "Routes/Club/Freestanding";
 // import Search from "Routes/Search";
 import Header from "Components/Header";
 import NotFound from "Routes/NotFound";
@@ -14,9 +20,12 @@ export default () => (
       <Switch>
         <Route path="/" exact component={Home} />
         {/* <Route path="/about" component={About} /> */}
-        <Route path="/club" component={Club} />
+        <Redirect path="/club" exact to="/club/creative" />
+        <Route path="/club/creative" exact component={CreativeClub} />
+        <Route path="/club/freestanding" exact component={FSClub} />
+        {/* <Route path="/club/join" exact component={() => "join to..."} /> */}
         {/* <Route path="/search" component={Search} /> */}
-        <Route component={NotFound} />
+        <Route path="*" component={NotFound} />
       </Switch>
     </>
   </Router>

@@ -114,46 +114,30 @@ const H3 = styled.h3`
   font-size: 36px;
 `;
 
-export default (props) => (
+export default ({ title, data }) => (
   <>
-    {/* {console.log(props)} */}
     <BgImg />
     <Greeting>
-      <H0>창체동아리</H0>
+      <H0>{title}</H0>
     </Greeting>
     <Main>
-      <H2>2020년 창체동아리 목록</H2>
-      <H3>이공계</H3>
-      <ClubList>
-        <ClubCard>
-          <H3>MAKER</H3>
-        </ClubCard>
-        <ClubCard>
-          <H3>BLINK - Y</H3>
-        </ClubCard>
-        <ClubCard>
-          <H3>BLINK - U</H3>
-        </ClubCard>
-        <ClubCard>
-          <H3>BLINK - U</H3>
-        </ClubCard>
-      </ClubList>
-      <H3>인문계</H3>
-      <ClubList>
-        <ClubCard>
-          <H3>MAKER</H3>
-        </ClubCard>
-        <ClubCard>
-          <H3>BLINK - Y</H3>
-        </ClubCard>
-        <ClubCard>
-          <H3>BLINK - U</H3>
-        </ClubCard>
-        <ClubCard>
-          <H3>BLINK - U</H3>
-        </ClubCard>
-      </ClubList>
-      <H2>2019년 창체동아리 목록</H2>
+      {data.map(({ title, sections }) => (
+        <>
+          <H2>{title}</H2>
+          {sections.map(({ subtitle, clublist }) => (
+            <>
+              <H3>{subtitle}</H3>
+              <ClubList>
+                {clublist.map(({ name }) => (
+                  <ClubCard>
+                    <H3>{name}</H3>
+                  </ClubCard>
+                ))}
+              </ClubList>
+            </>
+          ))}
+        </>
+      ))}
     </Main>
   </>
 );
