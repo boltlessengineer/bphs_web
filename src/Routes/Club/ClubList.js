@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const BgImg = styled.div`
   position: absolute;
@@ -124,6 +125,20 @@ const Students = styled.div`
 
 const Student = styled.p``;
 
+const SeeMore = styled(Link)`
+  position: absolute;
+  bottom: 18px;
+  right: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 40px;
+  border-radius: 10px;
+  background-color: black;
+  color: white;
+`;
+
 const H0 = styled.h1`
   font-weight: bold;
   font-size: 64px;
@@ -170,6 +185,7 @@ export default ({ title, data }) => (
                         차장 : {students.second.std_id} {students.second.name}
                       </Student>
                     </Students>
+                    <SeeMore>더보기</SeeMore>
                   </ClubCard>
                 ))}
               </ClubList>
