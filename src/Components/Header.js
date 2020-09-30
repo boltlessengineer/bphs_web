@@ -63,7 +63,7 @@ const MainNav = styled.div`
 const Header = () => (
   <MainHeader>
     <Item>
-      <Link to="/home">BopyungHS</Link>
+      <Link to="/">BopyungHS</Link>
     </Item>
     <MainNav>
       <Item>

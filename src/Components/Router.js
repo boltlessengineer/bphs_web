@@ -32,8 +32,8 @@ const SHdic = {
 export default () => (
   <Router>
     <Header />
-    <Redirect exact from="/" to="/home" />
     <Switch>
+      <Redirect exact from="/" to="/home" />
       <Route path="/home">
         <SubHeader list={SHdic.home} left />
         <Switch>
@@ -43,9 +43,9 @@ export default () => (
       </Route>
       <Route path="/about" component={About} />
       <Route path="/club">
-        <Redirect from="/club" exact to="/club/creative" />
         <SubHeader list={SHdic.club} />
         <Switch>
+          <Redirect exact from="/club" to="/club/creative" />
           <Route path="/club/creative" exact component={CreativeClub} />
           <Route path="/club/freestanding" exact component={FSClub} />
           {/* <Route path="/club/join" exact component={() => "join to..."} /> */}
