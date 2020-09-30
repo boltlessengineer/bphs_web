@@ -55,7 +55,8 @@ const Bubble = styled.div`
 const MainNav = styled.div`
   position: relative;
   display: flex;
-  gap: 2vw;
+  justify-content: space-between;
+  width: 230px;
   height: 100%;
 `;
 
