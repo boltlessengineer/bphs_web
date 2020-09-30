@@ -1,0 +1,70 @@
+{
+  "clubs": {
+    "creative": [
+      {
+        "title": "2020년 창체동아리 목록",
+        "sections": [
+          {
+            "subtitle": "이공계",
+            "clublist": [
+              {
+                "name": "MAKER",
+                "tag": []
+              },
+              {
+                "name": "BLINK - Y",
+                "tag": []
+              },
+              {
+                "name": "BLINK - U",
+                "tag": []
+              }
+            ]
+          },
+          {
+            "subtitle": "인문계",
+            "clublist": [
+              {
+                "name": "인문입문",
+                "tag": []
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "freestading": [
+      {
+        "title": "2020년 자율동아리 목록",
+        "sections": [
+          {
+            "subtitle": "이공계",
+            "clublist": [
+              {
+                "name": "웹테이커",
+                "tag": []
+              },
+              {
+                "name": "화하학~",
+                "tag": []
+              },
+              {
+                "name": "기하학!",
+                "tag": []
+              }
+            ]
+          },
+          {
+            "subtitle": "인문계",
+            "clublist": [
+              {
+                "name": "저자를 매우 철학",
+                "tag": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
