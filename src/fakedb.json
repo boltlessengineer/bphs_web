@@ -9,15 +9,48 @@
             "clublist": [
               {
                 "name": "MAKER",
-                "tag": []
+                "tag": ["아두이노", "코딩", "3D 프린팅", "로봇", "웹 개발"],
+                "description": "코딩, 모델링, 3D 프린팅을 포함한\n복합적인 메이커 활동을 하는 동아리입니다.",
+                "students": {
+                  "head": {
+                    "std_id": 20416,
+                    "name": "이성민"
+                  },
+                  "second": {
+                    "std_id": 20408,
+                    "name": "김진우"
+                  }
+                }
               },
               {
                 "name": "BLINK - Y",
-                "tag": []
+                "tag": [],
+                "description": "",
+                "students": {
+                  "head": {
+                    "std_id": 21212,
+                    "name": "홍길동"
+                  },
+                  "second": {
+                    "std_id": 12121,
+                    "name": "전우치"
+                  }
+                }
               },
               {
                 "name": "BLINK - U",
-                "tag": []
+                "tag": [],
+                "description": "",
+                "students": {
+                  "head": {
+                    "std_id": 32323,
+                    "name": "춘향이"
+                  },
+                  "second": {
+                    "std_id": 23232,
+                    "name": "이도령"
+                  }
+                }
               }
             ]
           },
@@ -26,7 +59,18 @@
             "clublist": [
               {
                 "name": "인문입문",
-                "tag": []
+                "tag": [],
+                "description": "",
+                "students": {
+                  "head": {
+                    "std_id": 32323,
+                    "name": "춘향이"
+                  },
+                  "second": {
+                    "std_id": 23232,
+                    "name": "이도령"
+                  }
+                }
               }
             ]
           }
@@ -42,15 +86,48 @@
             "clublist": [
               {
                 "name": "웹테이커",
-                "tag": []
+                "tag": [],
+                "description": "",
+                "students": {
+                  "head": {
+                    "std_id": 32323,
+                    "name": "춘향이"
+                  },
+                  "second": {
+                    "std_id": 23232,
+                    "name": "이도령"
+                  }
+                }
               },
               {
                 "name": "화하학~",
-                "tag": []
+                "tag": [],
+                "description": "",
+                "students": {
+                  "head": {
+                    "std_id": 32323,
+                    "name": "춘향이"
+                  },
+                  "second": {
+                    "std_id": 23232,
+                    "name": "이도령"
+                  }
+                }
               },
               {
                 "name": "기하학!",
-                "tag": []
+                "tag": [],
+                "description": "",
+                "students": {
+                  "head": {
+                    "std_id": 32323,
+                    "name": "춘향이"
+                  },
+                  "second": {
+                    "std_id": 23232,
+                    "name": "이도령"
+                  }
+                }
               }
             ]
           },
@@ -59,7 +136,18 @@
             "clublist": [
               {
                 "name": "저자를 매우 철학",
-                "tag": []
+                "tag": [],
+                "description": "",
+                "students": {
+                  "head": {
+                    "std_id": 32323,
+                    "name": "춘향이"
+                  },
+                  "second": {
+                    "std_id": 23232,
+                    "name": "이도령"
+                  }
+                }
               }
             ]
           }
