@@ -31,6 +31,7 @@ const Item = styled.div`
     z-index: 1;
     color: white;
     transition: all 0.3s;
+    line-height: 40px;
   }
   & a.current {
     color: #669beb;
@@ -44,9 +45,11 @@ const Bubble = styled.div`
   position: absolute;
   width: 128px;
   height: 55px;
-  background-color: white;
+  overflow: visible;
   z-index: 0;
-  transition: all 0.5s;
+  transition: all 0.3s ease;
+  background-image: url("/assets/bubble2.svg");
+  background-size: 128px auto;
 `;
 
 const MainNav = styled.div`
@@ -55,17 +58,6 @@ const MainNav = styled.div`
   gap: 2vw;
   height: 100%;
 `;
-
-window.onhashchange = () => {
-  // console.log(window.history);
-  // console.log(window.location);
-  // const bubble = document.querySelector(".bubble");
-  // const current = document.querySelector(".current");
-  // console.log(bubble);
-  // console.log(current);
-  // bubble.style.width = current.style.width;
-  // console.log(current.style.width);
-};
 
 const Header = (props) => {
   return (
@@ -78,7 +70,7 @@ const Header = (props) => {
         <MainNav>
           <Item>
             <SLink to="/about">About</SLink>
-            <Bubble style={{ bottom: 0 }} />
+            <Bubble style={{ top: 0, transform: "rotate(180deg)" }} />
           </Item>
           <Item>
             <SLink to="/club">Clubs</SLink>
