@@ -60,31 +60,26 @@ const MainNav = styled.div`
   height: 100%;
 `;
 
-const Header = () => {
-  return (
-    <>
-      <MainHeader>
-        <Item>
-          <Link to="/">BopyungHS</Link>
-        </Item>
-        <MainNav>
-          <Item>
-            <SLink to="/about">About</SLink>
-            <Bubble style={{ top: 0, transform: "rotate(180deg)" }} />
-          </Item>
-          <Item>
-            <SLink to="/club">Clubs</SLink>
-            <Bubble style={{ bottom: 0 }} />
-          </Item>
-          <Item>
-            <SLink to="/search">Search</SLink>
-            <Bubble style={{ bottom: 0 }} />
-          </Item>
-        </MainNav>
-      </MainHeader>
-      <SubHeader />
-    </>
-  );
-};
+const Header = () => (
+  <MainHeader>
+    <Item>
+      <Link to="/home">BopyungHS</Link>
+    </Item>
+    <MainNav>
+      <Item>
+        <SLink to="/about">About</SLink>
+        <Bubble style={{ top: 0, transform: "rotate(180deg)" }} />
+      </Item>
+      <Item>
+        <SLink to="/club">Clubs</SLink>
+        <Bubble style={{ bottom: 0 }} />
+      </Item>
+      <Item>
+        <SLink to="/search">Search</SLink>
+        <Bubble style={{ bottom: 0 }} />
+      </Item>
+    </MainNav>
+  </MainHeader>
+);
 
 export default withRouter(Header);

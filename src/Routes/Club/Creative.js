@@ -35,4 +35,4 @@ const fakeDB = [
   },
 ];
 
-export default () => <ClubList title="자율동아리" data={fakeDB} />;
+export default () => <ClubList title="창체동아리" data={fakeDB} />;
