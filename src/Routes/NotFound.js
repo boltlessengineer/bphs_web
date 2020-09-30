@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import Particles from "react-particles-js";
 
 const BgImg = styled.div`
   position: absolute;
@@ -101,7 +102,23 @@ const GoHome = ({ children }) => (
 export default () => (
   <>
     <BgImg id="particleBg">
-      <span>뭔가 엄청 멋진 배경</span>
+      <div>
+        <Particles
+          width="100vw"
+          height="30vh"
+          params={{
+            particles: {
+              number: {
+                value: 150,
+                density: {
+                  enable: true,
+                  value_area: 1000,
+                },
+              },
+            },
+          }}
+        />
+      </div>
     </BgImg>
     <Greeting>
       <H0>404 - Not Found</H0>
