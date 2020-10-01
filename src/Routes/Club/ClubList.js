@@ -2,14 +2,48 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-const BgImg = styled.div`
+const Background = styled.div`
   position: absolute;
-  background-image: url("");
-  background-color: #666666;
   width: 100vw;
   height: 30vh;
-  z-index: -2;
+  overflow: hidden;
+  background-color: #333333;
+
+  /*그냥 우스게 스타일 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: -3;
+  & span {
+    position: absolute;
+    font-size: 8em;
+    font-weight: 900;
+    opacity: 20%;
+    display: inline-block;
+    transform: rotate(5deg);
+    z-index: -2;
+  }
+  /*그냥 우스게 스타일 */
 `;
+
+const Image = styled.div`
+  background-image: url(${(props) => props.image});
+  background-size: cover;
+  background-position: center center;
+  transform: scale(1.03);
+  filter: blur(3px) brightness(0.6);
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+`;
+
+const BgImg = ({ image }) => (
+  <Background>
+    <Image image={image}></Image>
+    <span>이미지가 없습니다!</span>
+  </Background>
+);
 
 const Greeting = styled.div`
   position: relative;
@@ -154,9 +188,9 @@ const H3 = styled.h3`
   font-size: 36px;
 `;
 
-export default ({ match, title, data }) => (
+export default ({ match, title, bgImg, data }) => (
   <>
-    <BgImg />
+    <BgImg image={bgImg} />
     <Greeting>
       <H0>{title}</H0>
     </Greeting>
