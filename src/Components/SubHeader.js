@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, withRouter } from "react-router-dom";
+import { NavLink, withRouter } from "react-router-dom";
 import styled from "styled-components";
 
 const Header = styled.header`
@@ -16,22 +16,42 @@ const Header = styled.header`
   ${(props) => (props.children ? `height: auto;` : `height: 0;`)}
   transition: max-height 0.15s ease-out;
   z-index: 9999;
-  /* overflow: hidden; */
 `;
 
-const Item = styled.div`
+const More = styled.a`
+  color: #595959;
+`;
+
+const SNLink = styled(NavLink)`
+  position: relative;
+  overflow: hidden;
   height: 50px;
   font-size: 16px;
   font-weight: 400;
   color: #202020;
   display: flex;
   align-items: center;
-`;
-
-const SLink = styled(Link)``;
-
-const More = styled.a`
-  color: #595959;
+  &:before {
+    content: "";
+    width: 30px;
+    position: absolute;
+    border-bottom: 4px solid #669beb;
+    border-radius: 4px;
+    bottom: 6px;
+    right: 110%;
+    transition: all 0.4s;
+  }
+  &:hover:before {
+    right: 0;
+  }
+  &.current:before {
+    right: 0;
+    width: 100%;
+  }
+  &.current:hover:before {
+    width: 30px;
+    right: calc(100% - 30px);
+  }
 `;
 
 const SubHeader = ({ list, left = false }) => (
@@ -41,9 +61,9 @@ const SubHeader = ({ list, left = false }) => (
     }
   >
     {list.map((item) => (
-      <Item>
-        <SLink to={item.path}>{item.name}</SLink>
-      </Item>
+      <SNLink to={item.path} activeClassName="current">
+        {item.name}
+      </SNLink>
     ))}
   </Header>
 );

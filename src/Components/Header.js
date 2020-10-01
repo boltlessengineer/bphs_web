@@ -13,7 +13,7 @@ const MainHeader = styled.header`
 `;
 
 const SLink = ({ to, children }) => (
-  <NavLink to={to} activeClassName="current">
+  <NavLink to={to} activeClassName="active">
     {children}
   </NavLink>
 );
@@ -32,10 +32,10 @@ const Item = styled.div`
     transition: all 0.3s;
     line-height: 40px;
   }
-  & a.current {
+  & a.active {
     color: #669beb;
   }
-  & a:not(.current) ~ div {
+  & a:not(.active) ~ div {
     height: 0;
   }
 `;
