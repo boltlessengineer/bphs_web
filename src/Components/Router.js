@@ -13,6 +13,7 @@ import FSClub from "Routes/Club/Freestanding";
 import Header from "Components/Header";
 import SubHeader from "Components/SubHeader";
 import NotFound from "Routes/NotFound";
+import NotReady from "Routes/NotReady";
 
 const SHdic = {
   home: [
@@ -38,21 +39,21 @@ export default () => (
         <SubHeader list={SHdic.home} left />
         <Switch>
           <Route path="/home" exact component={Home} />
-          <Route path="*" component={NotFound} />
+          <Route path="*" component={NotReady} />
         </Switch>
       </Route>
-      <Route path="/about" component={About} />
+      <Route path="/about" component={NotReady} />
       <Route path="/club">
         <SubHeader list={SHdic.club} />
         <Switch>
           <Redirect exact from="/club" to="/club/creative" />
           <Route path="/club/creative" exact component={CreativeClub} />
           <Route path="/club/freestanding" exact component={FSClub} />
-          {/* <Route path="/club/join" exact component={() => "join to..."} /> */}
-          <Route path="*" component={NotFound} />
+          <Route path="/club/join" exact component={NotReady} />
+          <Route path="*" component={NotReady} />
         </Switch>
       </Route>
-      {/* <Route path="/search" component={Search} /> */}
+      <Route path="/search" component={NotReady} />
       <Route path="*" component={NotFound} />
     </Switch>
   </Router>

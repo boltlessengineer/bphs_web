@@ -110,7 +110,7 @@ const Tag = styled.span`
   height: 18px;
   font-size: 12px;
   font-weight: bold;
-  background-color: gray;
+  background-color: #47f8c3;
   padding: 0 6px;
   border-radius: 16px;
   margin: 14px 0;
@@ -154,7 +154,7 @@ const H3 = styled.h3`
   font-size: 36px;
 `;
 
-export default ({ title, data }) => (
+export default ({ match, title, data }) => (
   <>
     <BgImg />
     <Greeting>
@@ -168,7 +168,7 @@ export default ({ title, data }) => (
             <>
               <H3>{subtitle}</H3>
               <ClubList>
-                {clublist.map(({ name, tags, description, students }) => (
+                {clublist.map(({ url, name, tags, description, students }) => (
                   <ClubCard>
                     <H3>{name}</H3>
                     <TagList>
@@ -185,7 +185,9 @@ export default ({ title, data }) => (
                         차장 : {students.second.std_id} {students.second.name}
                       </Student>
                     </Students>
-                    <SeeMore>더보기</SeeMore>
+                    {url && (
+                      <SeeMore to={`${match.url}/${url}`}>더보기</SeeMore>
+                    )}
                   </ClubCard>
                 ))}
               </ClubList>

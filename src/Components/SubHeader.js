@@ -16,6 +16,8 @@ const Header = styled.header`
   ${(props) => (props.children ? `height: auto;` : `height: 0;`)}
   transition: max-height 0.15s ease-out;
   z-index: 9999;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
 `;
 
 const More = styled.a`

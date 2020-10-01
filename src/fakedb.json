@@ -8,6 +8,7 @@
             "subtitle": "이공계",
             "clublist": [
               {
+                "url": "maker",
                 "name": "MAKER",
                 "tags": ["아두이노", "코딩", "3D 프린팅", "로봇", "웹 개발"],
                 "description": "코딩, 모델링, 3D 프린팅을 포함한\n복합적인 메이커 활동을 하는 동아리입니다.",
@@ -23,6 +24,7 @@
                 }
               },
               {
+                "url": "",
                 "name": "BLINK - Y",
                 "tags": [],
                 "description": "",
@@ -38,6 +40,7 @@
                 }
               },
               {
+                "url": "",
                 "name": "BLINK - U",
                 "tags": [],
                 "description": "",
@@ -58,6 +61,7 @@
             "subtitle": "인문계",
             "clublist": [
               {
+                "url": "",
                 "name": "인문입문",
                 "tags": [],
                 "description": "",
@@ -85,6 +89,7 @@
             "subtitle": "이공계",
             "clublist": [
               {
+                "url": "",
                 "name": "웹테이커",
                 "tags": [],
                 "description": "",
@@ -100,6 +105,7 @@
                 }
               },
               {
+                "url": "",
                 "name": "화하학~",
                 "tags": [],
                 "description": "",
@@ -115,6 +121,7 @@
                 }
               },
               {
+                "url": "",
                 "name": "기하학!",
                 "tags": [],
                 "description": "",
@@ -135,6 +142,7 @@
             "subtitle": "인문계",
             "clublist": [
               {
+                "url": "",
                 "name": "저자를 매우 철학",
                 "tags": [],
                 "description": "",

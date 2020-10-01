@@ -4,4 +4,6 @@ import { clubs } from "fakedb.json";
 
 const fakeDB = clubs.freestading;
 
-export default () => <ClubList title="자율동아리" data={fakeDB} />;
+export default ({ match }) => (
+  <ClubList match={match} title="자율동아리" data={fakeDB} />
+);
