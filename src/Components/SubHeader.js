@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink, withRouter } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 const Header = styled.header`
@@ -15,7 +15,7 @@ const Header = styled.header`
   background-color: #ffffff;
   ${(props) => (props.children ? `height: auto;` : `height: 0;`)}
   transition: max-height 0.15s ease-out;
-  z-index: 999;
+  z-index: 8;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
     0 2px 4px -1px rgba(0, 0, 0, 0.06);
 `;
@@ -70,4 +70,4 @@ const SubHeader = ({ list, left = false }) => (
   </Header>
 );
 
-export default withRouter(SubHeader);
+export default SubHeader;

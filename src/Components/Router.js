@@ -9,7 +9,7 @@ import Home from "Routes/Home";
 // import About from "Routes/About";
 import CreativeClub from "Routes/Club/Creative";
 import FSClub from "Routes/Club/Freestanding";
-import ClubDetail from "Routes/Club/Detail/ClubDetail";
+import ClubDetail from "Routes/Club/Detail";
 // import Search from "Routes/Search";
 import Header from "Components/Header";
 import SubHeader from "Components/SubHeader";
@@ -49,7 +49,7 @@ export default () => (
         <Switch>
           <Redirect exact from="/club" to="/club/creative" />
           <Route path="/club/creative" exact component={CreativeClub} />
-          <Route path="/club/creative/:id" exact component={ClubDetail} />
+          <Route path="/club/creative/:id" component={ClubDetail} />
           <Route path="/club/freestanding" exact component={FSClub} />
           <Route path="/club/join" exact component={NotReady} />
           <Route path="*" component={NotFound} />
