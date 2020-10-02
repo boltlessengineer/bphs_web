@@ -7,58 +7,157 @@ const Container = styled.div`
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: 9999;
   background-color: #f4f4f4;
+  overflow: hidden;
+  z-index: 9999;
+`;
 
+const Header = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 60px;
   display: flex;
   align-items: center;
-  overflow: hidden;
+  justify-content: space-between;
+  padding: 0 8vw;
 `;
 
-const Gradient = styled.div`
-  width: ${(props) => props.width};
-  height: 100%;
+const Logo = styled.div`
+  background-color: lightgray;
+  width: ${(props) => (props.size ? `${props.size * 5}px` : "160px")};
+  height: ${(props) => (props.size ? `${props.size}px` : "32px")};
+  font-size: ${(props) => (props.size ? `${props.size}px` : "32px")};
+  line-height: 1;
 `;
+
+const NavList = styled.ul`
+  display: flex;
+  gap: 7vw;
+  font-size: 24px;
+  font-weight: 500;
+`;
+
+const Main = styled.main`
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 100vw;
+  height: calc(80vh - 60px);
+  padding: 0 8vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 30px;
+`;
+
+const Description = styled.text`
+  padding-top: 20px;
+  font-size: 24px;
+`;
+
+const BtnContainer = styled.div`
+  display: flex;
+  gap: 18px;
+`;
+
+const Button = styled.button`
+  border: none;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 24px;
+  color: #202020;
+  background-color: white;
+  padding: 8px 12px;
+  cursor: pointer;
+`;
+
+const JoinBtn = styled(Button)`
+  background-color: #669beb;
+  color: #f4f4f4;
+`;
+
+const MoreBtn = styled(Button)``;
+
+const Gradient = styled.div``;
 
 const BgContainer = styled.div`
   position: absolute;
-  /* left: 60vw; */
-  right: -15vw;
-  width: 60vw;
-  /* 모바일 고려해서 right, width 수정할것! */
-  height: 160vh;
-  /* transform-origin: bottom left; */
-  display: flex;
-  transform: rotate(23deg);
+  transform-origin: top right;
+  width: 120vw;
+  min-width: 60vh;
+  height: calc(100vh + 100vw);
+
+  transform: translateX(75vw) rotate(23deg);
+  z-index: -1;
+
   & ${Gradient} {
+    position: absolute;
+    /* transform-origin: bottom left; */
+    width: 100%;
+    height: 100%;
     background-color: ${(props) => props.color};
+    mix-blend-mode: multiply;
   }
   & ${Gradient}:nth-child(1) {
+    left: 0;
     opacity: 10%;
   }
   & ${Gradient}:nth-child(2) {
-    opacity: 50%;
+    left: 106px;
+    opacity: 30%;
   }
   & ${Gradient}:nth-child(3) {
-    opacity: 70%;
+    left: 171px;
+    opacity: 50%;
   }
   & ${Gradient}:nth-child(4) {
-    opacity: 90%;
+    left: 206px;
+    opacity: 40%;
+  }
+  & ${Gradient}:nth-child(5) {
+    left: 220px;
+    opacity: 70%;
   }
 `;
 
 const BgGradient = ({ color }) => (
   <BgContainer color={color}>
-    <Gradient width="108px" />
-    <Gradient width="67px" />
-    <Gradient width="34px" />
-    <Gradient width="14px" />
-    <Gradient width="calc(100% - 223px)" />
+    <Gradient />
+    <Gradient />
+    <Gradient />
+    <Gradient />
+    <Gradient />
   </BgContainer>
 );
 
+const description =
+  "메이커 동아리는 코딩, 모델링, 3d 프린팅을 포함한\n복합적인 maker 활동을 하는 동아리입니다.";
+
 export default () => (
   <Container>
-    <BgGradient color="#4175DF" />
+    <Header>
+      <Logo>MAKER</Logo>
+      <NavList>
+        <li>About</li>
+        <li>Contact</li>
+        <li>Projects</li>
+      </NavList>
+    </Header>
+    <BgGradient color="#669BEB" />
+    <Main>
+      <Logo size={100}>MAKER</Logo>
+      <Description>
+        {description.split("\n").map((i) => (
+          <p>{i}</p>
+        ))}
+      </Description>
+      <BtnContainer>
+        <JoinBtn>가입하기</JoinBtn>
+        <MoreBtn>더 알아보기</MoreBtn>
+      </BtnContainer>
+    </Main>
   </Container>
 );
