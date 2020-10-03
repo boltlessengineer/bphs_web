@@ -1,8 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import BgGradient from "Components/BgGradient";
+import { motion } from "framer-motion";
 
-const Section = styled.div`
+const Section = styled(motion.section)`
   width: 100vw;
   height: 100vh;
 `;
@@ -40,9 +41,9 @@ const BtnContainer = styled.div`
 const Button = styled.button`
   border: none;
   border-radius: 12px;
-  font-weight: bold;
   font-size: 24px;
   color: #202020;
+  font-weight: 500;
   background-color: white;
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(0, 0, 0, 0.04),
     0px 0px 1px rgba(0, 0, 0, 0.04);
@@ -53,6 +54,7 @@ const Button = styled.button`
 const JoinBtn = styled(Button)`
   background-color: #669beb;
   color: #f4f4f4;
+  font-weight: bold;
 `;
 
 const MoreBtn = styled(Button)``;
@@ -60,10 +62,28 @@ const MoreBtn = styled(Button)``;
 const description =
   "메이커 동아리는 코딩, 모델링, 3d 프린팅을 포함한\n복합적인 maker 활동을 하는 동아리입니다.";
 
+const pageTransition = {
+  in: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: 2.5,
+      duration: 1,
+    },
+  },
+  out: {
+    opacity: 0,
+    y: "-20%",
+    transition: {
+      duration: 1,
+    },
+  },
+};
+
 export default () => (
   <>
-    <Section>
-      <BgGradient color="#669BEB" />
+    <BgGradient color="#669BEB" />
+    <Section initial="out" animate="in" exit="out" variants={pageTransition}>
       <Main>
         <Logo>MAKER</Logo>
         <Description>
@@ -77,6 +97,5 @@ export default () => (
         </BtnContainer>
       </Main>
     </Section>
-    <Section></Section>
   </>
 );

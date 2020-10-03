@@ -1,76 +1,105 @@
 import React from "react";
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
-import { motion, useViewportScroll, useTransform } from "framer-motion";
+const Gradient = styled(motion.div)``;
 
-const Container = styled.div`
-  position: absolute;
+const Gradients = styled(motion.div)`
+  position: fixed;
   top: 0;
+  left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: -1;
+  /* z-index: -1; */
   overflow: hidden;
-`;
-
-const BgContainer = styled(motion.div)`
-  transform-origin: top right;
-  width: 120vw;
-  min-width: 60vh;
-  height: calc(100vh + 100vw);
-
-  transform: translateX(75vw) rotate(23deg);
-  & div {
+  & ${Gradient} {
     position: absolute;
-    right: 0;
-    /* transform-origin: bottom left; */
-    height: 100%;
-    background-color: ${(props) => props.color};
+    width: 120vw;
+    min-width: 60vh;
+    height: calc(100vh + 100vw);
+    bottom: 0;
+    transform-origin: bottom left;
+    background-color: ${(props) => (props.color ? props.color : "#669BEB")};
     mix-blend-mode: multiply;
+    transition: all 1.5s;
   }
-  & div:nth-child(1) {
-    /* left: 0; */
+  & ${Gradient}:nth-child(1) {
+    left: 0;
     width: 100%;
     opacity: 10%;
   }
-  & div:nth-child(2) {
-    /* left: 106px; */
+  & ${Gradient}:nth-child(2) {
+    left: 106px;
     width: calc(100% - 106px);
     opacity: 30%;
-    transition: all 0.1s;
   }
-  & div:nth-child(3) {
-    /* left: 171px; */
+  & ${Gradient}:nth-child(3) {
+    left: 171px;
     width: calc(100% - 171px);
     opacity: 50%;
-    transition: all 0.2s;
   }
-  & div:nth-child(4) {
-    /* left: 206px; */
+  & ${Gradient}:nth-child(4) {
+    left: 206px;
     width: calc(100% - 206px);
     opacity: 40%;
-    transition: all 0.3s;
   }
-  & div:nth-child(5) {
-    /* left: 220px; */
+  & ${Gradient}:nth-child(5) {
+    left: 220px;
     width: calc(100% - 220px);
     opacity: 60%;
-    transition: all 0.4s;
   }
 `;
 
+const container = {
+  hidden: {
+    height: "60px",
+    transition: {
+      delay: 2.3,
+      duration: 0.3,
+      ease: "easeOut",
+      staggerChildren: 0.2,
+      staggerDirection: 1,
+    },
+  },
+  show: {
+    height: "100vh",
+    transition: {
+      duration: 0.3,
+      ease: "easeOut",
+      delayChildren: 0.3,
+      staggerChildren: 0.2,
+      staggerDirection: -1,
+    },
+  },
+};
+
+const item = {
+  hidden: {
+    rotate: 0,
+    scaleX: 2,
+    marginLeft: "-400px",
+  },
+  show: {
+    rotate: 23,
+    scaleX: 1,
+    marginLeft: "35vw",
+  },
+};
+
 export default ({ color }) => {
-  const { scrollYProgress } = useViewportScroll();
-  const rotateScale = useTransform(scrollYProgress, (y) => y * 23);
-  const moveScale = useTransform(scrollYProgress, (y) => y * 1000);
   return (
-    <Container>
-      <BgContainer color={color} className="gradientBg">
-        <motion.div style={{ rotate: rotateScale, x: moveScale }} />
-        <motion.div style={{ rotate: rotateScale, x: moveScale }} />
-        <motion.div style={{ rotate: rotateScale, x: moveScale }} />
-        <motion.div style={{ rotate: rotateScale, x: moveScale }} />
-        <motion.div style={{ rotate: rotateScale, x: moveScale }} />
-      </BgContainer>
-    </Container>
+    <Gradients
+      color={color}
+      variants={container}
+      initial="hidden"
+      animate="show"
+      exit="hidden"
+    >
+      <Gradient variants={item} />
+      <Gradient variants={item} />
+      <Gradient variants={item} />
+      <Gradient variants={item} />
+      <Gradient variants={item} />
+    </Gradients>
   );
 };
