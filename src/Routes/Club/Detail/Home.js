@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import BgGradient from "Components/BgGradient";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const Section = styled(motion.section)`
   width: 100vw;
@@ -73,14 +74,14 @@ const pageTransition = {
   },
   out: {
     opacity: 0,
-    y: "-20%",
+    y: "-10%",
     transition: {
       duration: 1,
     },
   },
 };
 
-export default () => (
+export default ({ club, match }) => (
   <>
     <BgGradient color="#669BEB" />
     <Section initial="out" animate="in" exit="out" variants={pageTransition}>
@@ -92,8 +93,12 @@ export default () => (
           ))}
         </Description>
         <BtnContainer>
-          <JoinBtn>가입하기</JoinBtn>
-          <MoreBtn>더 알아보기</MoreBtn>
+          <Link>
+            <JoinBtn>가입하기</JoinBtn>
+          </Link>
+          <Link to={match.url + "/about"}>
+            <MoreBtn>더 알아보기</MoreBtn>
+          </Link>
         </BtnContainer>
       </Main>
     </Section>

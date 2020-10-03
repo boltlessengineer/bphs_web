@@ -67,7 +67,7 @@ export default ({ logo, match }) => (
         <NavLink to={match.url + "/contact"}>Contact</NavLink>
       </li>
       <li>
-        <NavLink to={match.url + "/projects"}>Projects</NavLink>
+        <NavLink to={match.url + "/activity"}>Activity</NavLink>
       </li>
     </NavList>
   </Header>

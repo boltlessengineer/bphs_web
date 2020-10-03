@@ -26,10 +26,17 @@ const pageTransition = {
   },
 };
 
-const Header = styled.div`
+const Header = styled(motion.div)`
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100vw;
   height: 60px;
   background-color: #4370db;
+  z-index: 1;
+  & ~ div {
+    margin-top: 60px;
+  }
 `;
 
 const About = () => (
@@ -50,6 +57,15 @@ const Contact = () => (
   </>
 );
 
+const Activty = () => (
+  <>
+    <Header />
+    <motion.div initial="out" animate="in" exit="out" variants={pageTransition}>
+      Activty
+    </motion.div>
+  </>
+);
+
 export default ({ location, match }) => (
   <Container>
     <ClubDetailHeader match={match} />
@@ -58,7 +74,7 @@ export default ({ location, match }) => (
         <Route path={`${match.url}/`} exact component={Home} />
         <Route path={`${match.url}/about`} component={About} />
         <Route path={`${match.url}/contact`} component={Contact} />
-        <Route path={`${match.url}/projects`} component={() => "projects"} />
+        <Route path={`${match.url}/activity`} component={Activty} />
       </Switch>
     </AnimatePresence>
   </Container>
