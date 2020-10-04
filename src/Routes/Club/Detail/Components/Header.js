@@ -82,7 +82,7 @@ export default ({ logo, current }) => (
       </NavLink>
     </GoBack>
     <NavLink to={current}>
-      <Logo>MAKER</Logo>
+      <Logo>{/* 여기에 로고 */}</Logo>
     </NavLink>
     <NavList>
       <SNLink to={current + "/about"} activeClassName="present">

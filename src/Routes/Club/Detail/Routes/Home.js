@@ -4,6 +4,8 @@ import BgGradient from "Routes/Club/Detail/Components/BgGradient";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
+import { clubsApi } from "fakeapi";
+
 const Section = styled.section``;
 
 const Main = styled(motion.div)`
@@ -28,6 +30,7 @@ const Logo = styled.div`
 const Description = styled.text`
   padding-top: 20px;
   font-size: 24px;
+  width: 60vw;
 `;
 
 const BtnContainer = styled.div`
@@ -49,15 +52,12 @@ const Button = styled.button`
 `;
 
 const JoinBtn = styled(Button)`
-  background-color: #669beb;
+  background-color: ${(props) => (props.color ? props.color : "#8395a7")};
   color: #f4f4f4;
   font-weight: bold;
 `;
 
 const MoreBtn = styled(Button)``;
-
-const description =
-  "메이커 동아리는 코딩, 모델링, 3d 프린팅을 포함한\n복합적인 maker 활동을 하는 동아리입니다.";
 
 const pageTransition = {
   in: {
@@ -77,26 +77,30 @@ const pageTransition = {
   },
 };
 
-export default ({ club, match }) => (
-  <>
-    <BgGradient color="#669BEB" />
-    <Section>
-      <Main initial="out" animate="in" exit="out" variants={pageTransition}>
-        <Logo>MAKER</Logo>
-        <Description>
-          {description.split("\n").map((i) => (
-            <p>{i}</p>
-          ))}
-        </Description>
-        <BtnContainer>
-          <Link>
-            <JoinBtn>가입하기</JoinBtn>
-          </Link>
-          <Link to={match.url + "/about"}>
-            <MoreBtn>더 알아보기</MoreBtn>
-          </Link>
-        </BtnContainer>
-      </Main>
-    </Section>
-  </>
-);
+export default ({ clubId, current }) => {
+  const club = clubsApi.clubDetail(clubId);
+  console.log(club);
+  return (
+    <>
+      <BgGradient color={club.color} />
+      <Section>
+        <Main initial="out" animate="in" exit="out" variants={pageTransition}>
+          <Logo>{club.name}</Logo>
+          <Description>
+            {club.description.split("\n").map((i) => (
+              <p>{i}</p>
+            ))}
+          </Description>
+          <BtnContainer>
+            <Link>
+              <JoinBtn color={club.color}>가입하기</JoinBtn>
+            </Link>
+            <Link to={current + "/about"}>
+              <MoreBtn>더 알아보기</MoreBtn>
+            </Link>
+          </BtnContainer>
+        </Main>
+      </Section>
+    </>
+  );
+};

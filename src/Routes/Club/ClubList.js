@@ -157,7 +157,9 @@ const Students = styled.div`
   bottom: 18px;
 `;
 
-const Student = styled.p``;
+const Student = styled.p`
+  min-height: 14px;
+`;
 
 const SeeMore = styled(Link)`
   position: absolute;
@@ -188,45 +190,40 @@ const H3 = styled.h3`
   font-size: 36px;
 `;
 
-export default ({ match, title, bgImg, data }) => (
+export default ({ match, title, subtitle, bgImg, data }) => (
   <>
     <BgImg image={bgImg} />
     <Greeting>
       <H0>{title}</H0>
     </Greeting>
     <Main>
-      {data.map(({ title, sections }) => (
-        <>
-          <H2>{title}</H2>
-          {sections.map(({ subtitle, clublist }) => (
-            <>
-              <H3>{subtitle}</H3>
-              <ClubList>
-                {clublist.map(({ id, name, tags, description, students }) => (
-                  <ClubCard>
-                    <H3>{name}</H3>
-                    <TagList>
-                      {tags.map((tag) => (
-                        <Tag>{tag}</Tag>
-                      ))}
-                    </TagList>
-                    <Description>{description}</Description>
-                    <Students>
-                      <Student>
-                        부장 : {students.head.std_id} {students.head.name}
-                      </Student>
-                      <Student>
-                        차장 : {students.second.std_id} {students.second.name}
-                      </Student>
-                    </Students>
-                    {id && <SeeMore to={`${match.url}/${id}`}>더보기</SeeMore>}
-                  </ClubCard>
-                ))}
-              </ClubList>
-            </>
-          ))}
-        </>
-      ))}
+      <H2>{subtitle}</H2>
+      <ClubList>
+        {data.map(({ id, name, tags, description, students }) => (
+          <ClubCard>
+            <H3>{name}</H3>
+            <TagList>
+              {tags.map((tag) => (
+                <Tag>{tag}</Tag>
+              ))}
+            </TagList>
+            <Description>{description}</Description>
+            <Students>
+              <Student>
+                부장 : {students.head.std_id} {students.head.name}
+              </Student>
+              <Student>
+                {students.second && (
+                  <>
+                    차장 : {students.second.std_id} {students.second.name}
+                  </>
+                )}
+              </Student>
+            </Students>
+            {id && <SeeMore to={`${match.url}/${id}`}>더보기</SeeMore>}
+          </ClubCard>
+        ))}
+      </ClubList>
     </Main>
   </>
 );

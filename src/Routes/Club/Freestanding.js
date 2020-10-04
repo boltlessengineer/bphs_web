@@ -1,9 +1,14 @@
 import React from "react";
 import ClubList from "./ClubList";
-import { clubs } from "fakedb.json";
+import { clubsApi } from "fakeapi";
 
-const fakeDB = clubs.freestading;
+const fakeDB = clubsApi.freestandingList();
 
 export default ({ match }) => (
-  <ClubList match={match} title="자율동아리" data={fakeDB} />
+  <ClubList
+    match={match}
+    title="자율동아리"
+    subtitle="2020년 자율동아리 목록"
+    data={fakeDB}
+  />
 );

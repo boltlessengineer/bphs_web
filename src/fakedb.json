@@ -2,164 +2,126 @@
   "clubs": {
     "creative": [
       {
-        "title": "2020년 창체동아리 목록",
-        "sections": [
-          {
-            "subtitle": "이공계",
-            "clublist": [
-              {
-                "id": "maker",
-                "name": "MAKER",
-                "tags": ["아두이노", "코딩", "3D 프린팅", "로봇", "웹 개발"],
-                "description": "코딩, 모델링, 3D 프린팅을 포함한\n복합적인 메이커 활동을 하는 동아리입니다.",
-                "students": {
-                  "head": {
-                    "std_id": 20416,
-                    "name": "이성민"
-                  },
-                  "second": {
-                    "std_id": 20408,
-                    "name": "김진우"
-                  }
-                }
-              },
-              {
-                "id": "blink-y",
-                "name": "BLINK - Y",
-                "tags": [],
-                "description": "",
-                "students": {
-                  "head": {
-                    "std_id": 21212,
-                    "name": "홍길동"
-                  },
-                  "second": {
-                    "std_id": 12121,
-                    "name": "전우치"
-                  }
-                }
-              },
-              {
-                "id": "blink-u",
-                "name": "BLINK - U",
-                "tags": [],
-                "description": "",
-                "students": {
-                  "head": {
-                    "std_id": 32323,
-                    "name": "춘향이"
-                  },
-                  "second": {
-                    "std_id": 23232,
-                    "name": "이도령"
-                  }
-                }
-              }
-            ]
+        "id": "maker",
+        "name": "MAKER",
+        "color": "#669BEB",
+        "tags": ["아두이노", "코딩", "3D 프린팅", "로봇", "웹 개발"],
+        "description": "코딩, 모델링, 3D 프린팅을 포함한\n복합적인 메이커 활동을 하는 동아리입니다.",
+        "students": {
+          "head": {
+            "std_id": 20416,
+            "name": "이성민"
           },
-          {
-            "subtitle": "인문계",
-            "clublist": [
-              {
-                "id": "",
-                "name": "인문입문",
-                "tags": [],
-                "description": "",
-                "students": {
-                  "head": {
-                    "std_id": 32323,
-                    "name": "춘향이"
-                  },
-                  "second": {
-                    "std_id": 23232,
-                    "name": "이도령"
-                  }
-                }
-              }
-            ]
+          "second": {
+            "std_id": 20408,
+            "name": "김진우"
           }
-        ]
+        }
+      },
+      {
+        "id": "blink-y",
+        "name": "BLINK - Y",
+        "color": "#feca57",
+        "tags": [],
+        "description": "마리아 별 토끼, 하나에 이 무덤 거외다. 하나에 말 까닭이요, 계십니다. 멀듯이, 남은 추억과 이름을 않은 버리었습니다.",
+        "students": {
+          "head": {
+            "std_id": 21212,
+            "name": "홍길동"
+          },
+          "second": {
+            "std_id": 12121,
+            "name": "전우치"
+          }
+        }
+      },
+      {
+        "id": "blink-u",
+        "name": "BLINK - U",
+        "color": "",
+        "tags": [],
+        "description": "그리고 너무나 내 어머니, 청춘이 패, 내린 경, 버리었습니다. 없이 까닭이요, 잠, 아직 하나에 멀듯이, 무성할 이름을 계집애들의 거외다. 겨울이 당신은 내 추억과 이름과, 내 이네들은 까닭입니다.",
+        "students": {
+          "head": {
+            "std_id": 32323,
+            "name": "춘향이"
+          },
+          "second": {
+            "std_id": 23232,
+            "name": "이도령"
+          }
+        }
+      },
+      {
+        "id": "enterhumanities",
+        "name": "인문입문",
+        "color": "",
+        "tags": [],
+        "description": "국교는 인정되지 아니하며, 종교와 정치는 분리된다. 국가는 농업 및 어업을 보호·육성하기 위하여 농·어촌종합개발과 그 지원등 필요한 계획을 수립·시행하여야 한다.",
+        "students": {
+          "head": {
+            "std_id": 32323,
+            "name": "춘향이"
+          },
+          "second": {
+            "std_id": 23232,
+            "name": "이도령"
+          }
+        }
       }
     ],
-    "freestading": [
+    "freestanding": [
       {
-        "title": "2020년 자율동아리 목록",
-        "sections": [
-          {
-            "subtitle": "이공계",
-            "clublist": [
-              {
-                "id": "webtaker",
-                "name": "웹테이커",
-                "tags": [],
-                "description": "",
-                "students": {
-                  "head": {
-                    "std_id": 32323,
-                    "name": "춘향이"
-                  },
-                  "second": {
-                    "std_id": 23232,
-                    "name": "이도령"
-                  }
-                }
-              },
-              {
-                "id": "chemistryyy",
-                "name": "화하학~",
-                "tags": [],
-                "description": "",
-                "students": {
-                  "head": {
-                    "std_id": 32323,
-                    "name": "춘향이"
-                  },
-                  "second": {
-                    "std_id": 23232,
-                    "name": "이도령"
-                  }
-                }
-              },
-              {
-                "id": "geometryyy",
-                "name": "기하학!",
-                "tags": [],
-                "description": "",
-                "students": {
-                  "head": {
-                    "std_id": 32323,
-                    "name": "춘향이"
-                  },
-                  "second": {
-                    "std_id": 23232,
-                    "name": "이도령"
-                  }
-                }
-              }
-            ]
-          },
-          {
-            "subtitle": "인문계",
-            "clublist": [
-              {
-                "id": "",
-                "name": "저자를 매우 철학",
-                "tags": [],
-                "description": "",
-                "students": {
-                  "head": {
-                    "std_id": 32323,
-                    "name": "춘향이"
-                  },
-                  "second": {
-                    "std_id": 23232,
-                    "name": "이도령"
-                  }
-                }
-              }
-            ]
+        "id": "webtaker",
+        "name": "웹테이커",
+        "color": "",
+        "tags": [],
+        "description": "웹 크롤링 특화 동아리. 들키지 않으면 범죄가 아닙니다.",
+        "students": {
+          "head": {
+            "std_id": 20416,
+            "name": "이성민"
           }
-        ]
+        }
+      },
+      {
+        "id": "chemistryyy",
+        "name": "화하학~",
+        "color": "",
+        "tags": [],
+        "description": "제2항과 제3항의 처분에 대하여는 법원에 제소할 수 없다. 대통령은 국무회의의 의장이 되고, 국무총리는 부의장이 된다.",
+        "students": {
+          "head": {
+            "std_id": 32323,
+            "name": "춘향이"
+          }
+        }
+      },
+      {
+        "id": "geometryyy",
+        "name": "기하학!",
+        "color": "",
+        "tags": [],
+        "description": "대한민국은 국제평화의 유지에 노력하고 침략적 전쟁을 부인한다.",
+        "students": {
+          "head": {
+            "std_id": 32323,
+            "name": "춘향이"
+          }
+        }
+      },
+      {
+        "id": "",
+        "name": "저자를 매우 철학",
+        "color": "",
+        "tags": [],
+        "description": "법관은 탄핵 또는 금고 이상의 형의 선고에 의하지 아니하고는 파면되지 아니하며, 징계처분에 의하지 아니하고는 정직·감봉 기타 불리한 처분을 받지 아니한다.",
+        "students": {
+          "head": {
+            "std_id": 32323,
+            "name": "춘향이"
+          }
+        }
       }
     ]
   }

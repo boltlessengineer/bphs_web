@@ -49,7 +49,7 @@ export default () => (
         <Switch>
           <Redirect exact from="/club" to="/club/creative" />
           <Route path="/club/creative" exact component={CreativeClub} />
-          <Route path="/club/creative/:id" component={ClubDetail} />
+          <Route path="/club/creative/:clubId" component={ClubDetail} />
           <Route path="/club/freestanding" exact component={FSClub} />
           <Route path="/club/join" exact component={NotReady} />
           <Route path="*" component={NotFound} />

@@ -20,7 +20,7 @@ const Gradients = styled(motion.div)`
     height: calc(100vh + 100vw);
     bottom: 0;
     transform-origin: bottom left;
-    background-color: ${(props) => (props.color ? props.color : "#669BEB")};
+    background-color: ${(props) => (props.color ? props.color : "#8395a7")};
     mix-blend-mode: multiply;
     transition: all 1.5s;
   }
