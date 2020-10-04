@@ -77,14 +77,14 @@ const Card = styled.div`
   display: block;
   background-color: #ffffff;
   border-radius: 30px;
-  padding: 12px 24px;
+  padding: 18px 24px;
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(0, 0, 0, 0.04),
     0px 0px 1px rgba(0, 0, 0, 0.04);
 `;
 
 const ClubCard = styled(Card)`
   width: 430px;
-  height: 270px;
+  height: 300px;
 `;
 
 const VerticalList = styled.div`
@@ -136,6 +136,7 @@ const ClubList = ({ children }) => (
 
 const TagList = styled.div`
   display: flex;
+  height: 46px;
   gap: 6px;
 `;
 
@@ -185,9 +186,15 @@ const H2 = styled.h2`
   font-size: 48px;
 `;
 
-const H3 = styled.h3`
+const Logo = styled.div`
+  background-image: url(${(props) => props.image});
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 380px;
+  height: 54px;
+  font-size: 48px;
+  line-height: 1;
   font-weight: bold;
-  font-size: 36px;
 `;
 
 export default ({ match, title, subtitle, bgImg, data }) => (
@@ -199,9 +206,9 @@ export default ({ match, title, subtitle, bgImg, data }) => (
     <Main>
       <H2>{subtitle}</H2>
       <ClubList>
-        {data.map(({ id, name, tags, description, students }) => (
+        {data.map(({ id, name, logo, tags, description, students }) => (
           <ClubCard>
-            <H3>{name}</H3>
+            {logo["64"] ? <Logo image={logo["64"]} /> : <Logo>{name}</Logo>}
             <TagList>
               {tags.map((tag) => (
                 <Tag>{tag}</Tag>

@@ -4,6 +4,11 @@
       {
         "id": "maker",
         "name": "MAKER",
+        "logo": {
+          "32": "https://i.imgur.com/IqeM36V.png",
+          "64": "https://i.imgur.com/8GxiLfz.png",
+          "256": "https://i.imgur.com/A2WjnsO.png"
+        },
         "color": "#669BEB",
         "tags": ["아두이노", "코딩", "3D 프린팅", "로봇", "웹 개발"],
         "description": "코딩, 모델링, 3D 프린팅을 포함한\n복합적인 메이커 활동을 하는 동아리입니다.",
@@ -21,8 +26,9 @@
       {
         "id": "blink-y",
         "name": "BLINK - Y",
+        "logo": {},
         "color": "#feca57",
-        "tags": [],
+        "tags": ["아두이노", "코딩"],
         "description": "마리아 별 토끼, 하나에 이 무덤 거외다. 하나에 말 까닭이요, 계십니다. 멀듯이, 남은 추억과 이름을 않은 버리었습니다.",
         "students": {
           "head": {
@@ -38,6 +44,7 @@
       {
         "id": "blink-u",
         "name": "BLINK - U",
+        "logo": {},
         "color": "",
         "tags": [],
         "description": "있는 우리의 작고 피어나기 아니한 밥을 이것은 있다. 따뜻한 충분히 소담스러운 무엇이 힘있다. 찾아다녀도, 인간이 그들을 그리하였는가?",
@@ -55,6 +62,7 @@
       {
         "id": "enterhumanities",
         "name": "인문입문",
+        "logo": {},
         "color": "",
         "tags": [],
         "description": "국교는 인정되지 아니하며, 종교와 정치는 분리된다. 국가는 농업 및 어업을 보호·육성하기 위하여 농·어촌종합개발과 그 지원등 필요한 계획을 수립·시행하여야 한다.",
@@ -74,6 +82,7 @@
       {
         "id": "webtaker",
         "name": "웹테이커",
+        "logo": {},
         "color": "",
         "tags": [],
         "description": "웹 크롤링 특화 동아리. 들키지 않으면 범죄가 아닙니다.",
@@ -87,6 +96,7 @@
       {
         "id": "chemistryyy",
         "name": "화하학~",
+        "logo": {},
         "color": "",
         "tags": [],
         "description": "제2항과 제3항의 처분에 대하여는 법원에 제소할 수 없다. 대통령은 국무회의의 의장이 되고, 국무총리는 부의장이 된다.",
@@ -100,6 +110,7 @@
       {
         "id": "geometryyy",
         "name": "기하학!",
+        "logo": {},
         "color": "",
         "tags": [],
         "description": "대한민국은 국제평화의 유지에 노력하고 침략적 전쟁을 부인한다.",
@@ -113,6 +124,7 @@
       {
         "id": "",
         "name": "저자를 매우 철학",
+        "logo": {},
         "color": "",
         "tags": [],
         "description": "법관은 탄핵 또는 금고 이상의 형의 선고에 의하지 아니하고는 파면되지 아니하며, 징계처분에 의하지 아니하고는 정직·감봉 기타 불리한 처분을 받지 아니한다.",

@@ -22,7 +22,11 @@ const Main = styled(motion.div)`
 `;
 
 const Logo = styled.div`
-  height: 100px;
+  background-image: url(${(props) => props.image});
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 500px;
+  height: 128px;
   font-size: 100px;
   line-height: 1;
 `;
@@ -85,7 +89,11 @@ export default ({ clubId, current }) => {
       <BgGradient color={club.color} />
       <Section>
         <Main initial="out" animate="in" exit="out" variants={pageTransition}>
-          <Logo>{club.name}</Logo>
+          {club.logo["256"] ? (
+            <Logo image={club.logo["256"]} />
+          ) : (
+            <Logo>{club.name}</Logo>
+          )}
           <Description>
             {club.description.split("\n").map((i) => (
               <p>{i}</p>
