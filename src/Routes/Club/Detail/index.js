@@ -1,9 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import Home from "./Home";
+import Home from "./Routes/Home";
+import About from "./Routes/About";
+import Contact from "./Routes/Contact";
+import Activity from "./Routes/Activity";
 import { Switch, Route } from "react-router-dom";
-import ClubDetailHeader from "Routes/Club/Detail/Components/Header";
-import { AnimatePresence, motion } from "framer-motion";
+import ClubDetailHeader from "./Components/Header";
+import { AnimatePresence } from "framer-motion";
 
 const Container = styled.div`
   position: absolute;
@@ -13,10 +16,12 @@ const Container = styled.div`
   height: 100vh;
   background-color: #f4f4f4;
   z-index: 10;
+  padding-top: 60px;
 `;
 
-const Header = styled.div`
-  position: relative;
+const HeaderBg = styled.div`
+  position: fixed;
+  top: 0;
   width: 100vw;
   height: 60px;
   background-color: #ffffff;
@@ -25,54 +30,25 @@ const Header = styled.div`
   z-index: 10;
 `;
 
-const pageTransition = {
-  in: {
-    opacity: 1,
-    y: 0,
-  },
-  out: {
-    opacity: 0,
-    y: "-100%",
-  },
-};
-
-const About = ({ match }) => (
-  <>
-    <Header />
-    <motion.div initial="out" animate="in" exit="out" variants={pageTransition}>
-      About
-    </motion.div>
-  </>
-);
-
-const Contact = ({ match }) => (
-  <>
-    <Header />
-    <motion.div initial="out" animate="in" exit="out" variants={pageTransition}>
-      Contact
-    </motion.div>
-  </>
-);
-
-const Activty = ({ match }) => (
-  <>
-    <Header />
-    <motion.div initial="out" animate="in" exit="out" variants={pageTransition}>
-      Activty
-    </motion.div>
-  </>
-);
-
 /* match가 이상한, /club/creative/adsdf 같은거라면? */
 export default ({ location, match }) => (
   <Container>
     <ClubDetailHeader current={match.url} />
     <AnimatePresence exitBeforeEnter initial={false}>
       <Switch location={location} key={location.pathname}>
-        <Route path={`${match.url}`} exact component={Home}></Route>
-        <Route path={`${match.url}/about`} component={About}></Route>
-        <Route path={`${match.url}/contact`} component={Contact}></Route>
-        <Route path={`${match.url}/activity`} component={Activty}></Route>
+        <Route path={`${match.url}`} exact component={Home} />
+        <Route path={`${match.url}/about`}>
+          <HeaderBg />
+          <About />
+        </Route>
+        <Route path={`${match.url}/contact`}>
+          <HeaderBg />
+          <Contact />
+        </Route>
+        <Route path={`${match.url}/activity`}>
+          <HeaderBg />
+          <Activity />
+        </Route>
       </Switch>
     </AnimatePresence>
   </Container>

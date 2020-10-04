@@ -9,7 +9,7 @@ const Section = styled.section``;
 const Main = styled(motion.div)`
   position: relative;
   width: 100vw;
-  height: 90vh;
+  height: 80vh;
   padding: 0 8vw;
   display: flex;
   flex-direction: column;
