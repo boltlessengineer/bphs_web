@@ -52,7 +52,7 @@ const SNLink = styled(NavLink)`
   }
   &.current:hover:before {
     width: 30px;
-    right: calc(100% - 30px);
+    /* right: calc(100% - 30px); */
   }
 `;
 

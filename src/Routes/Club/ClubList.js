@@ -136,7 +136,7 @@ const ClubList = ({ children }) => (
 
 const TagList = styled.div`
   display: flex;
-  height: 46px;
+  min-height: 46px;
   gap: 6px;
 `;
 
