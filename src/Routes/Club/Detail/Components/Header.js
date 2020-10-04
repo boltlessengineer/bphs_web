@@ -53,7 +53,7 @@ const SNLink = styled(NavLink)`
     position: absolute;
     bottom: 0;
     left: 0;
-    border-bottom: 3px solid #c4c4c4;
+    border-bottom: 3px solid #d9d9d9;
     z-index: -1;
     transition: all 0.4s;
   }
