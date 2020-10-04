@@ -47,16 +47,22 @@ const SNLink = styled(NavLink)`
   align-items: center;
   justify-content: center;
   position: relative;
+  &::after {
+    content: "";
+    width: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-bottom: 3px solid #c4c4c4;
+    z-index: -1;
+    transition: all 0.4s;
+  }
   &.present {
-    font-weight: bold;
-    /* &::after {
-      content: "";
+    /* font-weight: bold; */
+    /* text-decoration: underline; */
+    &::after {
       width: 100%;
-      height: 60px;
-      background-color: #669beb;
-      position: absolute;
-      z-index: -1;
-    } */
+    }
   }
 `;
 
