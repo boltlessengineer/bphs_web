@@ -171,7 +171,7 @@ const SeeMore = styled(Link)`
   width: 80px;
   height: 40px;
   border-radius: 10px;
-  background-color: black;
+  background-color: #303030;
   color: white;
 `;
 

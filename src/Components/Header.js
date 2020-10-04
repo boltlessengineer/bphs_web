@@ -47,7 +47,7 @@ const Bubble = styled.div`
   overflow: visible;
   z-index: 0;
   transition: all 0.3s ease;
-  background-image: url("/assets/bubble2.svg");
+  background-image: url("/assets/bubble.svg");
   background-size: 128px auto;
 `;
 
