@@ -23,7 +23,7 @@ const Logo = styled.div`
 
 const NavList = styled.ul`
   display: flex;
-  gap: 5vw;
+  gap: 7vw;
   font-size: 24px;
   font-weight: 500;
   color: #202020;
@@ -41,7 +41,26 @@ const GoBack = styled.div`
   }
 `;
 
-export default ({ logo, match }) => (
+const SNLink = styled(NavLink)`
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  &.present {
+    font-weight: bold;
+    /* &::after {
+      content: "";
+      width: 100%;
+      height: 60px;
+      background-color: #669beb;
+      position: absolute;
+      z-index: -1;
+    } */
+  }
+`;
+
+export default ({ logo, current }) => (
   <Header>
     <GoBack>
       <NavLink to="/club">
@@ -56,19 +75,19 @@ export default ({ logo, match }) => (
         </svg>
       </NavLink>
     </GoBack>
-    <NavLink to={match.url}>
+    <NavLink to={current}>
       <Logo>MAKER</Logo>
     </NavLink>
     <NavList>
-      <li>
-        <NavLink to={match.url + "/about"}>About</NavLink>
-      </li>
-      <li>
-        <NavLink to={match.url + "/contact"}>Contact</NavLink>
-      </li>
-      <li>
-        <NavLink to={match.url + "/activity"}>Activity</NavLink>
-      </li>
+      <SNLink to={current + "/about"} activeClassName="present">
+        About
+      </SNLink>
+      <SNLink to={current + "/contact"} activeClassName="present">
+        Contact
+      </SNLink>
+      <SNLink to={current + "/activity"} activeClassName="present">
+        Activity
+      </SNLink>
     </NavList>
   </Header>
 );

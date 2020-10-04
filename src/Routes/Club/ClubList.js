@@ -202,7 +202,7 @@ export default ({ match, title, bgImg, data }) => (
             <>
               <H3>{subtitle}</H3>
               <ClubList>
-                {clublist.map(({ url, name, tags, description, students }) => (
+                {clublist.map(({ id, name, tags, description, students }) => (
                   <ClubCard>
                     <H3>{name}</H3>
                     <TagList>
@@ -219,9 +219,7 @@ export default ({ match, title, bgImg, data }) => (
                         차장 : {students.second.std_id} {students.second.name}
                       </Student>
                     </Students>
-                    {url && (
-                      <SeeMore to={`${match.url}/${url}`}>더보기</SeeMore>
-                    )}
+                    {id && <SeeMore to={`${match.url}/${id}`}>더보기</SeeMore>}
                   </ClubCard>
                 ))}
               </ClubList>

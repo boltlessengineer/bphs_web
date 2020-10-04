@@ -1,17 +1,13 @@
 import React from "react";
 import styled from "styled-components";
-import BgGradient from "Components/BgGradient";
+import BgGradient from "Routes/Club/Detail/Components/BgGradient";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
-const Section = styled(motion.section)`
-  width: 100vw;
-  height: 100vh;
-`;
+const Section = styled.section``;
 
-const Main = styled.div`
-  position: absolute;
-  top: 0;
+const Main = styled(motion.div)`
+  position: relative;
   width: 100vw;
   height: 90vh;
   padding: 0 8vw;
@@ -69,14 +65,14 @@ const pageTransition = {
     y: 0,
     transition: {
       delay: 2.5,
-      duration: 1,
+      duration: 0.9,
     },
   },
   out: {
     opacity: 0,
     y: "-10%",
     transition: {
-      duration: 1,
+      duration: 0.5,
     },
   },
 };
@@ -84,8 +80,8 @@ const pageTransition = {
 export default ({ club, match }) => (
   <>
     <BgGradient color="#669BEB" />
-    <Section initial="out" animate="in" exit="out" variants={pageTransition}>
-      <Main>
+    <Section>
+      <Main initial="out" animate="in" exit="out" variants={pageTransition}>
         <Logo>MAKER</Logo>
         <Description>
           {description.split("\n").map((i) => (

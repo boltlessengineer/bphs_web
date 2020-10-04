@@ -10,6 +10,7 @@ const Gradients = styled(motion.div)`
   left: 0;
   width: 100vw;
   height: 100vh;
+  background-color: #f4f4f4;
   /* z-index: -1; */
   overflow: hidden;
   & ${Gradient} {
@@ -52,7 +53,7 @@ const Gradients = styled(motion.div)`
 
 const container = {
   hidden: {
-    height: "60px",
+    height: "0px",
     transition: {
       delay: 2.3,
       duration: 0.3,
