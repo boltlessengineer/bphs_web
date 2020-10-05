@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
+import { clubsApi } from "fakeapi";
 
 const Header = styled.div`
   position: absolute;
@@ -16,6 +17,10 @@ const Header = styled.div`
 `;
 
 const Logo = styled.div`
+  background-image: url(${(props) => props.image});
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 160px;
   height: 32px;
   font-size: 32px;
   line-height: 1;
@@ -66,34 +71,41 @@ const SNLink = styled(NavLink)`
   }
 `;
 
-export default ({ logo, current }) => (
-  <Header>
-    <GoBack>
-      <NavLink to="/club">
-        <svg width="44" height="44" fill="none">
-          <path
-            d="M27.5 11L16.5 22L27.5 33"
-            stroke="#202020"
-            stroke-width="2.75"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-        </svg>
+export default ({ clubId, current }) => {
+  const club = clubsApi.clubDetail(clubId);
+  return (
+    <Header>
+      <GoBack>
+        <NavLink to="/club">
+          <svg width="44" height="44" fill="none">
+            <path
+              d="M27.5 11L16.5 22L27.5 33"
+              stroke="#202020"
+              stroke-width="2.75"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </NavLink>
+      </GoBack>
+      <NavLink to={current}>
+        {club.logo["64"] ? (
+          <Logo image={club.logo["64"]} />
+        ) : (
+          <Logo>{club.name}</Logo>
+        )}
       </NavLink>
-    </GoBack>
-    <NavLink to={current}>
-      <Logo>{/* 여기에 로고 */}</Logo>
-    </NavLink>
-    <NavList>
-      <SNLink to={current + "/about"} activeClassName="present">
-        About
-      </SNLink>
-      <SNLink to={current + "/contact"} activeClassName="present">
-        Contact
-      </SNLink>
-      <SNLink to={current + "/activity"} activeClassName="present">
-        Activity
-      </SNLink>
-    </NavList>
-  </Header>
-);
+      <NavList>
+        <SNLink to={current + "/about"} activeClassName="present">
+          About
+        </SNLink>
+        <SNLink to={current + "/contact"} activeClassName="present">
+          Contact
+        </SNLink>
+        <SNLink to={current + "/activity"} activeClassName="present">
+          Activity
+        </SNLink>
+      </NavList>
+    </Header>
+  );
+};

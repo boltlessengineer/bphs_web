@@ -35,7 +35,7 @@ export default ({ location, match }) => {
   const clubId = match.params.clubId;
   return (
     <Container>
-      <ClubDetailHeader current={match.url} />
+      <ClubDetailHeader current={match.url} clubId={clubId}/>
       <AnimatePresence exitBeforeEnter initial={false}>
         <Switch location={location} key={location.pathname}>
           <Route path={`${match.url}`} exact>

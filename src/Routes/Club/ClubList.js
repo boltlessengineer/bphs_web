@@ -144,7 +144,6 @@ const Tag = styled.span`
   display: flex;
   height: 18px;
   font-size: 12px;
-  font-weight: bold;
   background-color: #d9d9d9;
   padding: 0 6px;
   border-radius: 16px;
