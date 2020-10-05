@@ -4,6 +4,7 @@ import Home from "./Routes/Home";
 import About from "./Routes/About";
 import Contact from "./Routes/Contact";
 import Activity from "./Routes/Activity";
+import Edit from "./Routes/Edit";
 import { Switch, Route } from "react-router-dom";
 import ClubDetailHeader from "./Components/Header";
 import { AnimatePresence } from "framer-motion";
@@ -35,7 +36,7 @@ export default ({ location, match }) => {
   const clubId = match.params.clubId;
   return (
     <Container>
-      <ClubDetailHeader current={match.url} clubId={clubId}/>
+      <ClubDetailHeader current={match.url} clubId={clubId} />
       <AnimatePresence exitBeforeEnter initial={false}>
         <Switch location={location} key={location.pathname}>
           <Route path={`${match.url}`} exact>
@@ -52,6 +53,10 @@ export default ({ location, match }) => {
           <Route path={`${match.url}/activity`}>
             <HeaderBg />
             <Activity clubId={clubId} />
+          </Route>
+          <Route path={`${match.url}/edit`}>
+            <HeaderBg />
+            <Edit />
           </Route>
         </Switch>
       </AnimatePresence>
