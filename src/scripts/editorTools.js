@@ -10,14 +10,20 @@ import InlineCode from "@editorjs/inline-code";
 import SimpleImage from "@editorjs/simple-image";
 
 export const EDITOR_JS_TOOLS = {
-  table: Table,
   paragraph: Paragraph,
+  header: Header,
   list: List,
   linkTool: LinkTool,
-  image: Image,
-  header: Header,
-  quote: Quote,
+  // image: Image,
+  table: Table,
+  // quote: Quote,
   checklist: CheckList,
   inlineCode: InlineCode,
-  simpleImage: SimpleImage,
+  simpleImage: {
+    class: SimpleImage,
+    inlineToolbar: true,
+    config: {
+      placeholder: "Paste image URL",
+    },
+  },
 };
