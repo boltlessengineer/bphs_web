@@ -5,8 +5,17 @@ import EditorJs from "react-editor-js";
 import { EDITOR_JS_TOOLS } from "scripts/editorTools";
 // import "Styles/postStyle.scss";
 
-const Section = styled(motion.section)`
-  padding: 4vh 8vw 0;
+const Page = styled(motion.div)`
+  padding: 4vh 10vw 0;
+`;
+
+const Button = styled.button`
+  padding: 8px 18px;
+  border-radius: 8px;
+  background-color: #3498db;
+  color: #f4f4f4;
+  font-size: 1em;
+  font-weight: bold;
 `;
 
 const pageTransition = {
@@ -51,16 +60,14 @@ const Hi = () => {
     console.log("data", savedData);
   }, []);
   return (
-    <Section initial="out" animate="in" exit="exit" variants={pageTransition}>
-      <div className="dontReset">
-        <button onClick={handleSave}>Save</button>
-        <EditorJs
-          instanceRef={(instance) => (editorJsRef.current = instance)}
-          data={data}
-          tools={EDITOR_JS_TOOLS}
-        />
-      </div>
-    </Section>
+    <Page initial="out" animate="in" exit="exit" variants={pageTransition}>
+      <EditorJs
+        instanceRef={(instance) => (editorJsRef.current = instance)}
+        data={data}
+        tools={EDITOR_JS_TOOLS}
+      />
+      <Button onClick={handleSave}>저장</Button>
+    </Page>
   );
 };
 

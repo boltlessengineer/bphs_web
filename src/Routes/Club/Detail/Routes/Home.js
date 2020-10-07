@@ -12,7 +12,7 @@ const Main = styled(motion.div)`
   position: relative;
   width: 100vw;
   height: 80vh;
-  padding: 0 8vw;
+  padding: 0 10vw;
   display: flex;
   flex-direction: column;
   align-items: flex-start;

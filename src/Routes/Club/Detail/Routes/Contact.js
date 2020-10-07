@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 
 const Section = styled(motion.section)`
-  padding: 4vh 8vw 0;
+  padding: 4vh 10vw 0;
 `;
 
 const pageTransition = {
