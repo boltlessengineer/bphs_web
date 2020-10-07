@@ -10,8 +10,14 @@ import InlineCode from "@editorjs/inline-code";
 import SimpleImage from "@editorjs/simple-image";
 
 export const EDITOR_JS_TOOLS = {
-  paragraph: Paragraph,
-  header: Header,
+  paragraph: {
+    class: Paragraph,
+    inlineToolbar: true,
+  },
+  header: {
+    class: Header,
+    inlineToolbar: ["link"],
+  },
   list: List,
   linkTool: LinkTool,
   // image: Image,
